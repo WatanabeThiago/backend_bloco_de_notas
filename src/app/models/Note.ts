@@ -15,8 +15,11 @@ export default class Note {
     @Column()
     note_text: string;
 
+    @Column()
+    user_id: number
 
-    @ManyToOne(() => User, (user) => user.note)
+
+    @ManyToOne(type => User, notes => Note, { eager: true })
     @JoinColumn({ name: 'user_id' })
     user: User;
 

@@ -6,23 +6,16 @@ import NoteView from '../view/NotesView'
 class NoteController {
     async create(req: Request, res: Response) {                     // Criar o Sell
         const NoteRepository = getRepository(Note);                 // Conectando ao repositorio do model Sell
-        const user_id = 1              // Recebendo o sell_userID dos headers.authorization
-        const { note_name, note_text } = req.body
+                     // Recebendo o sell_userID dos headers.authorization
+    
+        const {note_name, note_text, user_id  } = req.body
 
         const data = {
-            note_name, note_text
+            note_name, note_text,user_id                                       // sell_name, sell_price, sell_state, sell_description, sell_icon, sell_amount
+        
         }
 
-        console.log({
-            ...req.body,
-            user_id
-        })
-
-        const note = NoteRepository.create({                        // Criando a linha na tabela.
-            ...req.body,                                            // sell_name, sell_price, sell_state, sell_description, sell_icon, sell_amount
-            user_id
-
-        })
+        const note = NoteRepository.create(data)                        // Criando a linha na tabela.)
         
         await NoteRepository.save(note)                             // Registrando dos dados na linha.
 

@@ -16,10 +16,8 @@ export default class User {
     @Column()
     user_password: string;
 
-    @OneToMany(() => Note, (note) => note.user, {
-        cascade: ['insert', 'update'],
-    })
-    note: Note[]
+    @OneToMany(type => Note, user => User)
+    notes: Note[]
 
 
 

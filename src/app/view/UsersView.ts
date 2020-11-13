@@ -7,7 +7,7 @@ export default {
       id: user.user_id,
       username: user.user_username,
       password: user.user_password,
-      notes: NotesView.renderMany(user.note)
+      notes: NotesView.renderMany(user.notes)
       
     };
   },

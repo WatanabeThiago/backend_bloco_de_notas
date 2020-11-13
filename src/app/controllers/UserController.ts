@@ -7,8 +7,8 @@ class UserController {
     async create(req: Request, res: Response) {
         const UserRepository = getRepository(User);
 
-        const {user_username, user_password } = req.body;
-        
+        const { user_username, user_password } = req.body;
+
         const data = {
             user_username, user_password
         }
@@ -36,7 +36,7 @@ class UserController {
 
         if (!userExists) {
             return res.sendStatus(404);
-           
+
         }
 
         await getConnection()
@@ -51,18 +51,13 @@ class UserController {
     }
 
     async list(req: Request, res: Response) {
-        try {
-            const courses_all = await getRepository(User).find();
-            return res.status(200).json({
-                message: "Sucesso ao buscar todos os usuarios.",
-                data: courses_all,
-            });
-        } catch (error) {
-            return res.status(400).json({
-                message: "Falha ao buscar os usuarios..",
-                info: error,
-            });
-        }
+        
+            const UserRepository = getRepository(User);                 // Conectando ao repositorio do model Sell
+
+            const users = await UserRepository.find();
+
+            return res.json(users);
+        
     }
     async listOne(req: Request, res: Response) {
         const { user_username } = req.params;
@@ -83,7 +78,7 @@ class UserController {
         const { user_name, user_username, user_password } = req.body;
         console.log(req.body)
         const dados = {
-             user_username, user_password
+            user_username, user_password
         }
         const user_id = req.params;
         try {
