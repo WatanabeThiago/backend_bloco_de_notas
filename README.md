@@ -2,6 +2,11 @@
 #
 Servidor/banco de dados criado para um projeto pessoal.
  
+<h3> 
+<img src="./uploads/Figma.png" width="403" height="132">
+</h3>
+
+
 <h1> Requisitos <h1>
  
 1. 📦<i> MySQL<i>
@@ -13,4 +18,3 @@ Servidor/banco de dados criado para um projeto pessoal.
  1. npm install
  2. npm dev
 
-<h3> </h3>
