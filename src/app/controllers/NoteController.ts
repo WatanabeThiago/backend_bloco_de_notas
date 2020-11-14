@@ -62,19 +62,19 @@ class NoteController {
         const dados = {
             note_text, note_name
         }
-        const user_id = req.params;
+        const note_id = req.params;
         try {
-            const courses_update = await getRepository(Note).update(
-                user_id,
+            const notes_update = await getRepository(Note).update(
+                note_id,
                 dados
             );
             return res.status(200).json({
-                message: "Update operation success.",
-                data: courses_update,
+                message: "Nota atualizada com sucesso.",
+                data: notes_update,
             });
         } catch (error) {
             return res.status(400).json({
-                message: "Update operation failed, try again.",
+                message: "Falha ao atualizar a nota.",
                 info: error,
             });
         }

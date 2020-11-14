@@ -80,17 +80,17 @@ class UserController {
         }
         const user_id = req.params;
         try {
-            const courses_update = await getRepository(User).update(
+            const users_update = await getRepository(User).update(
                 user_id,
                 dados
             );
             return res.status(200).json({
-                message: "Update operation success.",
-                data: courses_update,
+                message: "Usuario atualizado com sucesso.",
+                data: users_update,
             });
         } catch (error) {
             return res.status(400).json({
-                message: "Update operation failed, try again.",
+                message: "Falha ao atualizar o usuario.",
                 info: error,
             });
         }
