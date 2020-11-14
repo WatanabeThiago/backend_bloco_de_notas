@@ -6,6 +6,7 @@ export default {
             note_id: note.note_id,
             note_name: note.note_name,
             note_text: note.note_text,
+          
             
             
         };

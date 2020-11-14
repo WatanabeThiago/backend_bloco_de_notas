@@ -51,13 +51,11 @@ class UserController {
     }
 
     async list(req: Request, res: Response) {
-        
             const UserRepository = getRepository(User);                 // Conectando ao repositorio do model Sell
 
             const users = await UserRepository.find();
 
             return res.json(users);
-        
     }
     async listOne(req: Request, res: Response) {
         const { user_username } = req.params;

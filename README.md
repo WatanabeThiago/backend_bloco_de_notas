@@ -8,7 +8,9 @@ Servidor/banco de dados criado para um projeto pessoal.
 2. 📦<i> XAMPP<i>
 3. 📦<i> NPM ou YARN<i>
 
-<h2> Rodar aplicação <h2>
+<h3> Rodar aplicação </h3>
  
  1. npm install
  2. npm dev
+
+<h3> </h3>
