@@ -12,11 +12,9 @@ Servidor/banco de dados criado para um projeto pessoal.
 2. 📦<i> XAMPP<i>
 3. 📦<i> NPM ou YARN<i>
 
-#
-
 # <h1> Rodar aplicação </h1>
 
  1. 🔥 npm install
  2. 🔥 npm dev
 
-#
+
