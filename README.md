@@ -16,9 +16,9 @@ Servidor/banco de dados criado para um projeto pessoal.
 
 #
 
-<h3> Rodar aplicação </h3>
+<h1> Rodar aplicação </h1>
 
- 1. npm install
- 2. npm dev
+ 1. 🔥 npm install
+ 2. 🔥 npm dev
 
 #
