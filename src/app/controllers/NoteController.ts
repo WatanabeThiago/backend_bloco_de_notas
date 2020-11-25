@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { getRepository, getConnection } from 'typeorm'
 
-import Note from '../models/Note'
+import Note from '../../database/models/Note'
 import NoteView from '../view/NotesView'
 class NoteController {
     async create(req: Request, res: Response) {                     // Criar o Sell

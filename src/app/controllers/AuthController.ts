@@ -3,15 +3,15 @@ import { getRepository } from 'typeorm'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
-import User from '../models/User'
+import User from '../../database/models/User'
 
 class AuthController {
     async login(req: Request, res: Response) {
         const repository = getRepository(User);                                         // Receber o repositório do model User
 
-        const { user_email, user_password } = req.body;                                 // Receber dados do front/mobile.
+        const { user_username, user_password } = req.body;                                 // Receber dados do front/mobile.
         console.log(req.body);
-        const user = await repository.findOne({ where: { user_email } })                // Procurar pelo user_email no banco de dados.
+        const user = await repository.findOne({ where: { user_username } })                // Procurar pelo user_email no banco de dados.
         
         if(!user)                                                                       // Verificar se esse email não existe no banco de dados.
         {
@@ -26,7 +26,7 @@ class AuthController {
             return res.json("Senha errada")
         }
         console.log("isValidPassword")
-        const token = jwt.sign({id: user.user_id}, 'secret', {expiresIn: '1d'})         // Gerar token de autenticação
+        const token = jwt.sign({id: user.user_id}, 'arquivo_secreto', {expiresIn: '1d'})         // Gerar token de autenticação
 
         return res.json({                                                               // Retornar usuario
             user,

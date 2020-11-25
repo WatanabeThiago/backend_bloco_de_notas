@@ -18,7 +18,7 @@ export default class User {
 
     @OneToMany(type => Note, user => User)
     notes: Note[]
-
+    
 
 
     @BeforeInsert()
